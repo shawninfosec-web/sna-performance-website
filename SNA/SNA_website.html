@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SNA Automotive | Performance. Built Right.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #C0001A;
+    --red-dark: #8A0012;
+    --red-glow: #E8001F;
+    --black: #0A0A0A;
+    --dark: #111111;
+    --dark2: #1A1A1A;
+    --dark3: #222222;
+    --gray: #2E2E2E;
+    --mid: #555555;
+    --light: #AAAAAA;
+    --white: #F2F2F2;
+    --offwhite: #D8D8D8;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 400;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3rem;
+    height: 72px;
+    background: rgba(10,10,10,0.96);
+    border-bottom: 1px solid rgba(192,0,26,0.3);
+    backdrop-filter: blur(8px);
+  }
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.2rem;
+    letter-spacing: 0.12em;
+    color: var(--white);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--red); }
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--offwhite);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--red); }
+  .nav-cta {
+    background: var(--red);
+    color: var(--white) !important;
+    padding: 0.5rem 1.4rem !important;
+    font-weight: 700 !important;
+    border: none;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--red-dark) !important; color: var(--white) !important; }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .hamburger span { display: block; width: 26px; height: 2px; background: var(--white); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 3rem;
+    padding-top: 72px;
+    position: relative;
+    overflow: hidden;
+    background: var(--black);
+  }
+  .hero-photo {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1550353175-a3611868086b?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center 40%;
+    opacity: 0.28;
+    z-index: 0;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to right, rgba(10,10,10,0.92) 45%, rgba(10,10,10,0.5) 100%),
+      repeating-linear-gradient(90deg, rgba(192,0,26,0.03) 0px, rgba(192,0,26,0.03) 1px, transparent 1px, transparent 80px),
+      repeating-linear-gradient(0deg, rgba(192,0,26,0.03) 0px, rgba(192,0,26,0.03) 1px, transparent 1px, transparent 80px);
+    z-index: 1;
+  }
+  .hero-accent {
+    position: absolute;
+    top: 0; right: 0;
+    width: 55%;
+    height: 100%;
+    background: linear-gradient(135deg, transparent 40%, rgba(192,0,26,0.06) 100%);
+    pointer-events: none;
+  }
+  .hero-line {
+    position: absolute;
+    left: 0;
+    width: 4px;
+    height: 60%;
+    top: 20%;
+    background: var(--red);
+  }
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+  }
+  .hero-eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 1.2rem;
+  }
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(4rem, 10vw, 9rem);
+    line-height: 0.92;
+    letter-spacing: 0.02em;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--red);
+    display: block;
+  }
+  .hero-desc {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: var(--light);
+    max-width: 520px;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+  }
+  .hero-desc strong { color: var(--offwhite); font-weight: 500; }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.9rem 2.2rem;
+    background: var(--red);
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s, transform 0.1s;
+  }
+  .btn-primary:hover { background: var(--red-dark); transform: translateY(-1px); }
+  .btn-outline {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.9rem 2.2rem;
+    background: transparent;
+    color: var(--white);
+    border: 1px solid rgba(255,255,255,0.25);
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--red); color: var(--red); }
+  .hero-badges {
+    position: absolute;
+    right: 3rem;
+    bottom: 3rem;
+    display: flex;
+    gap: 1.5rem;
+  }
+  .hero-badge {
+    text-align: center;
+    border-left: 2px solid var(--red);
+    padding-left: 1rem;
+  }
+  .hero-badge-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    color: var(--white);
+    line-height: 1;
+  }
+  .hero-badge-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--light);
+  }
+
+  /* PARTNERS STRIP */
+  .partners-strip {
+    background: var(--dark2);
+    border-top: 1px solid var(--gray);
+    border-bottom: 1px solid var(--gray);
+    padding: 1.6rem 3rem;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+  .partners-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--mid);
+    white-space: nowrap;
+  }
+  .partner-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--offwhite);
+    text-transform: uppercase;
+  }
+  .partner-divider {
+    width: 1px;
+    height: 24px;
+    background: var(--gray);
+  }
+
+  /* SECTION COMMONS */
+  section { padding: 6rem 3rem; }
+  .section-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: var(--red);
+  }
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    letter-spacing: 0.03em;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 1.2rem;
+  }
+  .section-desc {
+    color: var(--light);
+    font-size: 1rem;
+    line-height: 1.8;
+    max-width: 560px;
+  }
+
+  /* SPECIALTIES */
+  #services { background: var(--dark); }
+  .services-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1px;
+    background: var(--gray);
+  }
+  .service-card {
+    background: var(--dark2);
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.25s;
+  }
+  .service-card:hover { background: var(--dark3); }
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 0;
+    background: var(--red);
+    transition: height 0.3s;
+  }
+  .service-card:hover::before { height: 100%; }
+  .service-icon {
+    font-size: 2.2rem;
+    margin-bottom: 1.2rem;
+    display: block;
+  }
+  .service-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4rem;
+    color: rgba(192,0,26,0.08);
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    line-height: 1;
+    pointer-events: none;
+  }
+  .service-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 0.05em;
+    color: var(--white);
+    margin-bottom: 0.8rem;
+  }
+  .service-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .service-list li {
+    font-size: 0.9rem;
+    color: var(--light);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .service-list li::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    background: var(--red);
+    flex-shrink: 0;
+    transform: rotate(45deg);
+  }
+
+  /* VEHICLES WE WORK ON */
+  #vehicles { background: var(--black); }
+  .vehicles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+  .vehicle-card {
+    background: var(--dark2);
+    border: 1px solid var(--gray);
+    padding: 1.8rem 1.5rem;
+    text-align: center;
+    transition: border-color 0.2s, background 0.2s;
+    cursor: default;
+  }
+  .vehicle-card:hover {
+    border-color: var(--red);
+    background: var(--dark3);
+  }
+  .vehicle-make {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 0.3rem;
+  }
+  .vehicle-model {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 0.05em;
+    color: var(--white);
+  }
+  .vehicle-detail {
+    font-size: 0.8rem;
+    color: var(--light);
+    margin-top: 0.3rem;
+  }
+
+  /* GALLERY */
+  #gallery {
+    background: var(--dark);
+    padding: 6rem 3rem;
+  }
+  .gallery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 260px 260px;
+    gap: 6px;
+  }
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+    background: var(--dark2);
+    cursor: pointer;
+  }
+  .gallery-item:first-child {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease, filter 0.4s ease;
+    filter: brightness(0.82) saturate(0.9);
+  }
+  .gallery-item:hover img {
+    transform: scale(1.06);
+    filter: brightness(1) saturate(1.1);
+  }
+  .gallery-item-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(10,10,10,0.75) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    align-items: flex-end;
+    padding: 1.4rem;
+  }
+  .gallery-item:hover .gallery-item-overlay { opacity: 1; }
+  .gallery-item-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--white);
+  }
+  .gallery-accent-bar {
+    width: 3px;
+    height: 100%;
+    background: var(--red);
+    position: absolute;
+    left: 0; top: 0;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.3s;
+  }
+  .gallery-item:hover .gallery-accent-bar { transform: scaleY(1); }
+
+  @media (max-width: 768px) {
+    .gallery-grid {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+    }
+    .gallery-item:first-child {
+      grid-column: span 2;
+      grid-row: span 1;
+    }
+    .gallery-item { height: 180px; }
+  }
+
+  /* AFFIRM / FINANCING */
+  #financing {
+    background: var(--dark2);
+    border-top: 1px solid var(--gray);
+    border-bottom: 1px solid var(--gray);
+  }
+  .financing-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .affirm-logo-block {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  .affirm-logo-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    color: var(--white);
+    letter-spacing: 0.05em;
+  }
+  .affirm-badge {
+    background: var(--red);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--white);
+    padding: 0.3rem 0.7rem;
+  }
+  .financing-points {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .financing-points li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    font-size: 0.95rem;
+    color: var(--light);
+    line-height: 1.6;
+  }
+  .financing-points li::before {
+    content: '✓';
+    color: var(--red);
+    font-weight: 700;
+    font-size: 1rem;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .financing-note {
+    font-size: 0.75rem;
+    color: var(--mid);
+    line-height: 1.6;
+  }
+  .affirm-mockup {
+    background: var(--dark3);
+    border: 1px solid var(--gray);
+    padding: 2.5rem;
+  }
+  .affirm-card-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 1.5rem;
+  }
+  .affirm-example {
+    border: 1px solid rgba(192,0,26,0.3);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .affirm-ex-label {
+    font-size: 0.8rem;
+    color: var(--light);
+    margin-bottom: 0.5rem;
+  }
+  .affirm-ex-value {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.2rem;
+    color: var(--white);
+  }
+  .affirm-ex-sub {
+    font-size: 0.75rem;
+    color: var(--mid);
+    margin-top: 0.2rem;
+  }
+  .affirm-cta-btn {
+    display: block;
+    width: 100%;
+    background: #fff;
+    color: #000;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 1rem;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    text-decoration: none;
+    display: block;
+  }
+  .affirm-cta-btn:hover { background: var(--offwhite); }
+
+  /* QUOTE FORM */
+  #quote { background: var(--dark); }
+  .quote-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 5rem;
+    align-items: start;
+  }
+  .quote-side { }
+  .quote-side-perks {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .perk {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  .perk-icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .perk-text strong {
+    display: block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--white);
+    margin-bottom: 0.2rem;
+  }
+  .perk-text span { font-size: 0.85rem; color: var(--light); line-height: 1.6; }
+
+  form { display: flex; flex-direction: column; gap: 1.2rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+  .form-group label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--mid);
+  }
+  .form-group label span { color: var(--red); }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: var(--dark2);
+    border: 1px solid var(--gray);
+    color: var(--white);
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.95rem;
+    padding: 0.8rem 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+    appearance: none;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--red); }
+  .form-group textarea { resize: vertical; min-height: 100px; }
+  .form-group select option { background: var(--dark2); }
+
+  .checkbox-group { flex-direction: column; gap: 0.6rem; }
+  .checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-size: 0.9rem;
+    color: var(--light);
+    cursor: pointer;
+  }
+  .checkbox-item input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--red);
+    flex-shrink: 0;
+    padding: 0;
+  }
+
+  .upload-zone {
+    border: 1px dashed var(--gray);
+    padding: 2rem;
+    text-align: center;
+    transition: border-color 0.2s, background 0.2s;
+    cursor: pointer;
+    position: relative;
+  }
+  .upload-zone:hover { border-color: var(--red); background: rgba(192,0,26,0.04); }
+  .upload-zone input[type="file"] {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+  .upload-icon { font-size: 2rem; display: block; margin-bottom: 0.5rem; }
+  .upload-label {
+    font-size: 0.9rem;
+    color: var(--light);
+  }
+  .upload-hint { font-size: 0.75rem; color: var(--mid); margin-top: 0.3rem; }
+
+  /* DISCLAIMER */
+  #disclaimer {
+    background: var(--black);
+    padding: 4rem 3rem;
+    border-top: 1px solid var(--gray);
+  }
+  .disclaimer-box {
+    border: 1px solid rgba(192,0,26,0.4);
+    background: rgba(192,0,26,0.04);
+    padding: 2.5rem 3rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .disclaimer-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 1.2rem;
+  }
+  .disclaimer-text {
+    font-size: 0.85rem;
+    color: var(--light);
+    line-height: 1.9;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .disclaimer-text strong { color: var(--offwhite); font-weight: 600; }
+
+  /* FOOTER */
+  footer {
+    background: var(--dark2);
+    border-top: 1px solid var(--gray);
+    padding: 3rem;
+  }
+  .footer-inner {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+  }
+  .footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 0.1em;
+    color: var(--white);
+    margin-bottom: 0.8rem;
+  }
+  .footer-logo span { color: var(--red); }
+  .footer-tagline { font-size: 0.85rem; color: var(--mid); line-height: 1.7; max-width: 260px; }
+  .footer-col h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 1.2rem;
+  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .footer-col ul a {
+    font-size: 0.9rem;
+    color: var(--light);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-col ul a:hover { color: var(--red); }
+  .footer-bottom {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--gray);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .footer-copy {
+    font-size: 0.8rem;
+    color: var(--mid);
+  }
+  .footer-partners {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  .footer-partner-label { font-size: 0.75rem; color: var(--mid); }
+  .footer-partner-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--light);
+  }
+
+  /* Success modal */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-overlay.active { display: flex; }
+  .modal-box {
+    background: var(--dark2);
+    border: 1px solid var(--red);
+    padding: 3rem;
+    max-width: 480px;
+    width: 90%;
+    text-align: center;
+  }
+  .modal-icon { font-size: 3rem; margin-bottom: 1rem; }
+  .modal-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    color: var(--white);
+    margin-bottom: 0.8rem;
+  }
+  .modal-desc { font-size: 0.95rem; color: var(--light); line-height: 1.7; margin-bottom: 2rem; }
+  .modal-close {
+    background: var(--red);
+    color: var(--white);
+    border: none;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.8rem 2rem;
+    cursor: pointer;
+  }
+
+  /* MOBILE NAV */
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    inset: 72px 0 0 0;
+    background: rgba(10,10,10,0.98);
+    z-index: 999;
+    flex-direction: column;
+    padding: 2rem 3rem;
+    gap: 1.5rem;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 0.08em;
+    color: var(--white);
+    text-decoration: none;
+    border-bottom: 1px solid var(--gray);
+    padding-bottom: 1rem;
+  }
+  .mobile-menu a:hover { color: var(--red); }
+
+  @media (max-width: 900px) {
+    nav { padding: 0 1.5rem; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    section { padding: 4rem 1.5rem; }
+    .hero { padding: 72px 1.5rem 3rem; }
+    .hero-badges { position: static; margin-top: 3rem; flex-wrap: wrap; gap: 2rem; }
+    .financing-inner { grid-template-columns: 1fr; }
+    .quote-inner { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    #disclaimer { padding: 3rem 1.5rem; }
+    .disclaimer-box { padding: 2rem; }
+    footer { padding: 3rem 1.5rem; }
+  }
+  @media (max-width: 600px) {
+    .footer-inner { grid-template-columns: 1fr; }
+    .partners-strip { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    .services-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">SNA<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#vehicles">Vehicles</a></li>
+    <li><a href="#financing">Financing</a></li>
+    <li><a href="#quote">Get a Quote</a></li>
+    <li><a href="#quote" class="nav-cta">Start Project</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services" onclick="closeMobile()">Services</a>
+  <a href="#vehicles" onclick="closeMobile()">Vehicles</a>
+  <a href="#financing" onclick="closeMobile()">Financing</a>
+  <a href="#quote" onclick="closeMobile()">Get a Quote</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-photo"></div>
+  <div class="hero-bg"></div>
+  <div class="hero-accent"></div>
+  <div class="hero-line"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Texas-Based Automotive Performance</p>
+    <h1>Built<br>Different.<em>Built Right.</em></h1>
+    <p class="hero-desc">
+      SNA specializes in <strong>Mustangs from Fox Body to S650</strong>, Mopars, Hondas, and more.
+      Wheels &amp; stance, bolt-on power, audio, and exterior — done with care, done right.
+    </p>
+    <div class="hero-actions">
+      <a href="#quote" class="btn-primary">Get a Free Estimate</a>
+      <a href="#services" class="btn-outline">View Services</a>
+    </div>
+  </div>
+  <div class="hero-badges">
+    <div class="hero-badge">
+      <div class="hero-badge-num">Fox–S650</div>
+      <div class="hero-badge-label">Mustang Expertise</div>
+    </div>
+    <div class="hero-badge">
+      <div class="hero-badge-num">4+</div>
+      <div class="hero-badge-label">Service Categories</div>
+    </div>
+    <div class="hero-badge">
+      <div class="hero-badge-num">TX</div>
+      <div class="hero-badge-label">Texas Proud</div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNER STRIP -->
+<div class="partners-strip">
+  <span class="partners-label">Trusted Partners</span>
+  <div class="partner-divider"></div>
+  <span class="partner-name">Texas Elite Performance</span>
+  <div class="partner-divider"></div>
+  <span class="partner-name">Majed Tuning</span>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-header">
+    <div>
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">Our Services</h2>
+    </div>
+    <p class="section-desc">From stance to sound, bolt-on power to custom exteriors — we handle every angle of your build.</p>
+  </div>
+  <div class="services-grid">
+
+    <div class="service-card">
+      <span class="service-num">01</span>
+      <span class="service-icon">🔧</span>
+      <h3 class="service-title">Wheels, Tires &amp; Suspension</h3>
+      <ul class="service-list">
+        <li>Stance &amp; fitment setup</li>
+        <li>Street &amp; track configurations</li>
+        <li>Handling upgrades &amp; diagnostics</li>
+        <li>Coilovers, sway bars &amp; alignment</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <span class="service-num">02</span>
+      <span class="service-icon">⚡</span>
+      <h3 class="service-title">Bolt-On Performance</h3>
+      <ul class="service-list">
+        <li>Cold air intake systems</li>
+        <li>Throttle body upgrades</li>
+        <li>Headers &amp; exhaust manifolds</li>
+        <li>Cat-back exhaust systems</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <span class="service-num">03</span>
+      <span class="service-icon">🔊</span>
+      <h3 class="service-title">Audio Upgrades</h3>
+      <ul class="service-list">
+        <li>Speaker system upgrades</li>
+        <li>Head unit &amp; source upgrades</li>
+        <li>Subwoofer &amp; amplifier installs</li>
+        <li>Sound deadening &amp; insulation</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <span class="service-num">04</span>
+      <span class="service-icon">✨</span>
+      <h3 class="service-title">Exterior &amp; Lighting</h3>
+      <ul class="service-list">
+        <li>Front lip &amp; splitter installs</li>
+        <li>Spoiler &amp; decklid upgrades</li>
+        <li>Grille replacements &amp; trim</li>
+        <li>Lighting upgrades (LED, HID)</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- NAV LINK UPDATE (add gallery) -->
+<!-- VEHICLES -->
+<section id="vehicles">
+  <div class="section-label">Platforms We Know</div>
+  <h2 class="section-title">Vehicles We Specialize In</h2>
+  <p class="section-desc">Deep expertise across American muscle, JDM sports cars, and more. If it has wheels, we can build it.</p>
+
+  <div class="vehicles-grid">
+    <div class="vehicle-card">
+      <div class="vehicle-make">Ford Mustang</div>
+      <div class="vehicle-model">Fox Body</div>
+      <div class="vehicle-detail">1979–1993</div>
+    </div>
+    <div class="vehicle-card">
+      <div class="vehicle-make">Ford Mustang</div>
+      <div class="vehicle-model">SN95 / New Edge</div>
+      <div class="vehicle-detail">1994–2004</div>
+    </div>
+    <div class="vehicle-card">
+      <div class="vehicle-make">Ford Mustang</div>
+      <div class="vehicle-model">S197</div>
+      <div class="vehicle-detail">2005–2014</div>
+    </div>
+    <div class="vehicle-card">
+      <div class="vehicle-make">Ford Mustang</div>
+      <div class="vehicle-model">S550</div>
+      <div class="vehicle-detail">2015–2023</div>
+    </div>
+    <div class="vehicle-card">
+      <div class="vehicle-make">Ford Mustang</div>
+      <div class="vehicle-model">S650</div>
+      <div class="vehicle-detail">2024–Present</div>
+    </div>
+    <div class="vehicle-card">
+      <div class="vehicle-make">Ford Mustang</div>
+      <div class="vehicle-model">Shelby / SVT / Cobra</div>
+      <div class="vehicle-detail">GT500 · GT350 · Cobra</div>
+    </div>
+    <div class="vehicle-card">
+      <div class="vehicle-make">Dodge</div>
+      <div class="vehicle-model">Charger / Challenger</div>
+      <div class="vehicle-detail">SRT · ScatPack · Hellcat</div>
+    </div>
+    <div class="vehicle-card">
+      <div class="vehicle-make">Honda / Acura</div>
+      <div class="vehicle-model">Civic &amp; Integra</div>
+      <div class="vehicle-detail">All Generations</div>
+    </div>
+    <div class="vehicle-card">
+      <div class="vehicle-make">Toyota / Subaru</div>
+      <div class="vehicle-model">FRS · BRZ · GT86</div>
+      <div class="vehicle-detail">ZN6 · ZD8 Platform</div>
+    </div>
+    <div class="vehicle-card" style="border-color: var(--red);">
+      <div class="vehicle-make" style="color: var(--light);">And More</div>
+      <div class="vehicle-model" style="font-size: 1.1rem;">Other Makes &amp; Models</div>
+      <div class="vehicle-detail">Ask us — we'll let you know</div>
+    </div>
+  </div>
+</section>
+
+<!-- FINANCING -->
+<section id="financing">
+  <div class="financing-inner">
+    <div>
+      <div class="section-label">Pay Your Way</div>
+      <h2 class="section-title">Flexible Financing</h2>
+      <p class="section-desc" style="margin-bottom: 2.5rem;">Don't let budget hold back your build. We work with Affirm to offer flexible, transparent financing so you can get started now.</p>
+
+      <div class="affirm-logo-block">
+        <span class="affirm-logo-text">Affirm</span>
+        <span class="affirm-badge">Buy Now, Pay Later</span>
+      </div>
+
+      <ul class="financing-points">
+        <li>Split your build cost into monthly payments that fit your budget</li>
+        <li>Quick application — no hidden fees, no surprises</li>
+        <li>Rates from 0–30% APR depending on approval</li>
+        <li>Pay off early anytime with no prepayment penalties</li>
+        <li>Financing available on labor and parts packages</li>
+      </ul>
+
+      <p class="financing-note">
+        Payment options through Affirm are provided by Affirm's lending partners. Subject to eligibility check and approval. A down payment may be required. Visit <a href="https://affirm.com/help" target="_blank" style="color: var(--light);">affirm.com/help</a> for more information.
+      </p>
+    </div>
+
+    <div class="affirm-mockup">
+      <div class="affirm-card-title">Example Financing Scenarios</div>
+
+      <div class="affirm-example">
+        <div class="affirm-ex-label">Full Stance Build</div>
+        <div class="affirm-ex-value">$2,500</div>
+        <div class="affirm-ex-sub">≈ $139/mo for 18 months (with approval)</div>
+      </div>
+
+      <div class="affirm-example">
+        <div class="affirm-ex-label">Audio + Exhaust Package</div>
+        <div class="affirm-ex-value">$1,200</div>
+        <div class="affirm-ex-sub">≈ $100/mo for 12 months (with approval)</div>
+      </div>
+
+      <div class="affirm-example">
+        <div class="affirm-ex-label">Full Performance Build</div>
+        <div class="affirm-ex-value">$5,000+</div>
+        <div class="affirm-ex-sub">Custom payment plan — ask us</div>
+      </div>
+
+      <a href="https://www.affirm.com/merchants" target="_blank" class="affirm-cta-btn">
+        See If You Qualify with Affirm →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE FORM -->
+<section id="quote">
+  <div class="quote-inner">
+    <div class="quote-side">
+      <div class="section-label">Let's Talk</div>
+      <h2 class="section-title">Get Your Free Estimate</h2>
+      <p class="section-desc">Tell us about your car and vision. We'll reach out to discuss pricing, timeline, and next steps.</p>
+
+      <div class="quote-side-perks">
+        <div class="perk">
+          <span class="perk-icon">🏁</span>
+          <div class="perk-text">
+            <strong>Free Consultation</strong>
+            <span>No obligation. Just a conversation about your build goals and budget.</span>
+          </div>
+        </div>
+        <div class="perk">
+          <span class="perk-icon">📸</span>
+          <div class="perk-text">
+            <strong>Send Your Photos</strong>
+            <span>Upload current photos of your car so we can assess the build from the start.</span>
+          </div>
+        </div>
+        <div class="perk">
+          <span class="perk-icon">🔩</span>
+          <div class="perk-text">
+            <strong>Partner Network</strong>
+            <span>We work with Texas Elite Performance and Majed Tuning for complete builds.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <form id="quoteForm" novalidate>
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name <span>*</span></label>
+          <input type="text" name="firstName" placeholder="John" required>
+        </div>
+        <div class="form-group">
+          <label>Last Name <span>*</span></label>
+          <input type="text" name="lastName" placeholder="Smith" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Email <span>*</span></label>
+          <input type="email" name="email" placeholder="john@email.com" required>
+        </div>
+        <div class="form-group">
+          <label>Phone <span>*</span></label>
+          <input type="tel" name="phone" placeholder="(555) 000-0000" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Vehicle Year <span>*</span></label>
+          <input type="number" name="year" placeholder="e.g. 2018" min="1979" max="2025" required>
+        </div>
+        <div class="form-group">
+          <label>Make <span>*</span></label>
+          <select name="make" required>
+            <option value="" disabled selected>Select make</option>
+            <option>Ford</option>
+            <option>Dodge</option>
+            <option>Chrysler</option>
+            <option>Honda</option>
+            <option>Acura</option>
+            <option>Toyota</option>
+            <option>Subaru</option>
+            <option>Scion</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Model <span>*</span></label>
+          <input type="text" name="model" placeholder="e.g. Mustang GT, Charger R/T" required>
+        </div>
+        <div class="form-group">
+          <label>Trim / Package</label>
+          <input type="text" name="trim" placeholder="e.g. Scatpack, Cobra, SVT">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Services Interested In <span>*</span></label>
+        <div class="checkbox-group">
+          <label class="checkbox-item"><input type="checkbox" name="services" value="wheels"> Wheels, Tires &amp; Suspension</label>
+          <label class="checkbox-item"><input type="checkbox" name="services" value="performance"> Bolt-On Performance</label>
+          <label class="checkbox-item"><input type="checkbox" name="services" value="audio"> Audio Upgrades</label>
+          <label class="checkbox-item"><input type="checkbox" name="services" value="exterior"> Exterior &amp; Lighting</label>
+          <label class="checkbox-item"><input type="checkbox" name="services" value="full"> Full Build Package</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Describe What You Want Done <span>*</span></label>
+        <textarea name="description" placeholder="Tell us what mods, style, or upgrades you're looking for. Be as detailed as you'd like!" rows="4" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>End Goal for Your Car</label>
+        <select name="goal">
+          <option value="" disabled selected>What's the build goal?</option>
+          <option>Daily Driver — comfortable &amp; stylish</option>
+          <option>Show Car — visual &amp; stance focused</option>
+          <option>Street Performance — power &amp; handling</option>
+          <option>Track Build — all-out performance</option>
+          <option>Audio / Sound System Focus</option>
+          <option>Combination of multiple goals</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Budget Range</label>
+        <select name="budget">
+          <option value="" disabled selected>Approximate budget</option>
+          <option>Under $500</option>
+          <option>$500 – $1,500</option>
+          <option>$1,500 – $3,500</option>
+          <option>$3,500 – $7,500</option>
+          <option>$7,500+</option>
+          <option>Unsure — need your advice</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Upload Vehicle Photos</label>
+        <div class="upload-zone" id="uploadZone">
+          <input type="file" name="photos" multiple accept="image/*" id="fileInput">
+          <span class="upload-icon">📷</span>
+          <div class="upload-label">Click or drag photos here</div>
+          <div class="upload-hint">JPG, PNG, HEIC accepted — up to 10MB per file</div>
+          <div id="fileNames" style="margin-top: 0.5rem; font-size: 0.8rem; color: var(--red);"></div>
+        </div>
+      </div>
+
+      <div style="background: rgba(192,0,26,0.06); border: 1px solid rgba(192,0,26,0.25); padding: 1rem 1.2rem; font-size: 0.8rem; color: var(--light); line-height: 1.7;">
+        <strong style="color: var(--offwhite);">⚠ Important:</strong> By submitting this form you acknowledge our <a href="#disclaimer" style="color: var(--red);">liability disclaimer</a>. SNA is not responsible for damages from aftermarket parts. No refunds on labor once work has begun.
+      </div>
+
+      <button type="submit" class="btn-primary" style="font-size: 1.1rem; padding: 1.1rem;">
+        Submit Estimate Request →
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<section id="disclaimer">
+  <div class="disclaimer-box">
+    <div class="disclaimer-title">⚠ Liability Disclaimer — Please Read</div>
+    <div class="disclaimer-text">
+      <p><strong>No Refunds on Labor:</strong> All labor charges are final. Once work has begun on a vehicle, there are no refunds on labor costs under any circumstances.</p>
+      <p><strong>Aftermarket Parts &amp; Modifications:</strong> SNA Automotive is not responsible for any damage, failure, or mechanical issues that arise from the installation of aftermarket parts or modifications. The customer assumes all risk associated with modifications to their vehicle.</p>
+      <p><strong>Reliability:</strong> Modifying your vehicle does not make it more reliable. In fact, performance modifications may reduce the reliability, longevity, and drivability of your vehicle under certain conditions. This is acknowledged and accepted by the customer upon agreeing to any service.</p>
+      <p><strong>Post-Service Issues:</strong> SNA Automotive is not liable for parts failures, drivetrain damage, or any consequential damages that occur after the completion of services, whether related or unrelated to the work performed.</p>
+      <p><strong>Parts Sourcing:</strong> When customers supply their own parts, SNA Automotive is not responsible for defective, incorrect, or incompatible parts and will not be liable for any resulting damage or additional labor costs.</p>
+      <p><strong>By requesting a quote or agreeing to service, the customer acknowledges they have read and accepted these terms.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">SNA<span>.</span></div>
+      <p class="footer-tagline">Texas-based automotive performance specialists. Mustangs, Mopars, JDM — built with purpose from Fox Body to S650.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">Wheels &amp; Suspension</a></li>
+        <li><a href="#services">Bolt-On Performance</a></li>
+        <li><a href="#services">Audio Upgrades</a></li>
+        <li><a href="#services">Exterior &amp; Lighting</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#vehicles">Vehicles We Work On</a></li>
+        <li><a href="#financing">Financing (Affirm)</a></li>
+        <li><a href="#quote">Get an Estimate</a></li>
+        <li><a href="#disclaimer">Disclaimer</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Partners</h4>
+      <ul>
+        <li><a href="#">Texas Elite Performance</a></li>
+        <li><a href="#">Majed Tuning</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2024 SNA Automotive. All rights reserved. Texas, USA.</p>
+    <div class="footer-partners">
+      <span class="footer-partner-label">Partners:</span>
+      <span class="footer-partner-name">Texas Elite Performance</span>
+      <span style="color: var(--gray);">·</span>
+      <span class="footer-partner-name">Majed Tuning</span>
+    </div>
+  </div>
+</footer>
+
+<!-- SUCCESS MODAL -->
+<div class="modal-overlay" id="modal">
+  <div class="modal-box">
+    <div class="modal-icon">🏁</div>
+    <div class="modal-title">Request Received!</div>
+    <p class="modal-desc">We've got your estimate request. Our team will review your vehicle info and reach out within 1–2 business days to discuss your build.</p>
+    <button class="modal-close" onclick="document.getElementById('modal').classList.remove('active')">Close</button>
+  </div>
+</div>
+
+<script>
+  document.getElementById('hamburger').addEventListener('click', function() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  });
+  function closeMobile() {
+    document.getElementById('mobileMenu').classList.remove('open');
+  }
+
+  document.getElementById('fileInput').addEventListener('change', function() {
+    const names = Array.from(this.files).map(f => f.name).join(', ');
+    document.getElementById('fileNames').textContent = names ? '📎 ' + names : '';
+  });
+
+  document.getElementById('quoteForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const required = this.querySelectorAll('[required]');
+    let valid = true;
+    required.forEach(el => {
+      if (!el.value.trim()) {
+        valid = false;
+        el.style.borderColor = 'var(--red)';
+        el.addEventListener('input', () => el.style.borderColor = '', { once: true });
+      }
+    });
+    if (!valid) {
+      const first = this.querySelector('[required]:placeholder-shown, [required][value=""]');
+      return;
+    }
+    document.getElementById('modal').classList.add('active');
+    this.reset();
+    document.getElementById('fileNames').textContent = '';
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact – SNA Performance</title>
+  <meta name="description" content="Get in touch with SNA Performance. Reach out about services, scheduling, or general questions about your build."/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav class="nav">
+  <a href="index.html" class="nav-logo">SNA <span>Performance</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="quote.html">Get a Quote</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+    <li><a href="quote.html" class="nav-cta">Book Now</a></li>
+  </ul>
+  <div class="nav-toggle" onclick="toggleMenu(this)">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div id="mobile-menu" style="display:none;position:fixed;top:70px;left:0;right:0;background:rgba(10,10,10,0.98);z-index:999;padding:32px 24px;border-bottom:1px solid #252525;">
+  <ul style="display:flex;flex-direction:column;gap:24px;">
+    <li><a href="index.html" style="color:#9ca3af;font-size:1.1rem;font-weight:600;">Home</a></li>
+    <li><a href="services.html" style="color:#9ca3af;font-size:1.1rem;font-weight:600;">Services</a></li>
+    <li><a href="quote.html" style="color:#9ca3af;font-size:1.1rem;font-weight:600;">Get a Quote</a></li>
+    <li><a href="contact.html" style="color:#fff;font-size:1.1rem;font-weight:600;">Contact</a></li>
+    <li><a href="quote.html" class="btn btn-primary" style="justify-content:center;">Book Now</a></li>
+  </ul>
+</div>
+
+<div class="page">
+
+  <!-- ===== PAGE HERO ===== -->
+  <div class="page-hero">
+    <div class="page-hero-grid"></div>
+    <div class="container">
+      <p class="section-label">Reach Out</p>
+      <h1>Contact <em>Us</em></h1>
+      <p>Have a question about your build? Ready to schedule? Send us a message and we'll get back to you as soon as possible.</p>
+    </div>
+  </div>
+
+  <!-- ===== CONTACT MAIN ===== -->
+  <section>
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- LEFT COLUMN: INFO -->
+        <div>
+          <div class="contact-info-card">
+            <h3>SNA Performance</h3>
+
+            <div class="contact-item">
+              <div class="contact-item-icon">📍</div>
+              <div>
+                <div class="contact-item-label">Location</div>
+                <div class="contact-item-val">Your City, TX</div>
+                <div style="color:var(--muted);font-size:0.82rem;margin-top:2px;">By appointment only</div>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item-icon">📞</div>
+              <div>
+                <div class="contact-item-label">Phone / Text</div>
+                <div class="contact-item-val"><a href="tel:+10000000000" style="color:var(--white);">(000) 000-0000</a></div>
+                <div style="color:var(--muted);font-size:0.82rem;margin-top:2px;">Text preferred</div>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item-icon">✉️</div>
+              <div>
+                <div class="contact-item-label">Email</div>
+                <div class="contact-item-val"><a href="mailto:info@snaperformance.com" style="color:var(--white);">info@snaperformance.com</a></div>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item-icon">🕐</div>
+              <div>
+                <div class="contact-item-label">Hours</div>
+                <div class="contact-item-val" style="font-size:0.9rem;">Mon – Fri: 9am – 6pm</div>
+                <div style="color:var(--muted);font-size:0.82rem;margin-top:2px;">Sat by appointment · Sun closed</div>
+              </div>
+            </div>
+
+            <div style="border-top:1px solid var(--border);margin:24px 0;"></div>
+
+            <div>
+              <div class="contact-item-label" style="margin-bottom:12px;">Follow Us</div>
+              <div class="social-links" style="flex-direction:column;">
+                <a href="https://instagram.com/yoursnahandle" target="_blank" rel="noopener" class="social-link">
+                  📸 &nbsp;Instagram &nbsp;<span style="color:var(--muted);font-size:0.78rem;">@yoursnahandle</span>
+                </a>
+              </div>
+            </div>
+
+            <div style="border-top:1px solid var(--border);margin:24px 0;"></div>
+
+            <!-- PARTNERS -->
+            <div>
+              <div class="contact-item-label" style="margin-bottom:14px;">Our Partners</div>
+              <div style="display:flex;flex-direction:column;gap:10px;">
+                <div style="background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius);padding:12px 16px;">
+                  <div style="font-weight:700;font-size:0.9rem;">Texas Elite Performance</div>
+                  <div style="color:var(--muted);font-size:0.8rem;margin-top:2px;">Performance builds &amp; tuning</div>
+                </div>
+                <div style="background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius);padding:12px 16px;">
+                  <div style="font-weight:700;font-size:0.9rem;">Majed Tuning</div>
+                  <div style="color:var(--muted);font-size:0.8rem;margin-top:2px;">ECU tuning &amp; calibration</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FINANCING CARD -->
+          <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px 28px;margin-top:20px;">
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+              <span style="font-size:1.4rem;">💳</span>
+              <div style="font-family:var(--font-head);font-size:1.2rem;letter-spacing:0.04em;">Financing with Affirm</div>
+            </div>
+            <p style="color:var(--muted);font-size:0.88rem;line-height:1.65;">Split your build into easy monthly payments. Ask us about Affirm when you get in touch.</p>
+            <a href="https://www.affirm.com" target="_blank" rel="noopener" class="btn btn-secondary" style="margin-top:16px;width:100%;justify-content:center;">Learn About Affirm →</a>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: CONTACT FORM -->
+        <div>
+          <div class="form-section">
+            <h2 style="font-family:var(--font-head);font-size:1.8rem;letter-spacing:0.04em;margin-bottom:8px;">
+              Send Us a <em style="font-style:normal;color:var(--red);">Message</em>
+            </h2>
+            <p style="color:var(--muted);font-size:0.9rem;margin-bottom:32px;">
+              For quote requests, please use our <a href="quote.html" style="color:var(--red);">dedicated quote form</a> so we can collect all the details we need.
+            </p>
+
+            <!-- Replace action URL with your Formspree endpoint: https://formspree.io -->
+            <form action="https://formspree.io/f/YOUR_CODE_HERE" method="POST">
+              <div class="form-grid">
+
+                <div class="form-group">
+                  <label>First Name <span>*</span></label>
+                  <input type="text" name="first_name" placeholder="John" required/>
+                </div>
+                <div class="form-group">
+                  <label>Last Name <span>*</span></label>
+                  <input type="text" name="last_name" placeholder="Doe" required/>
+                </div>
+                <div class="form-group">
+                  <label>Phone / Text <span>*</span></label>
+                  <input type="tel" name="phone" placeholder="(555) 555-5555" required/>
+                </div>
+                <div class="form-group">
+                  <label>Email <span>*</span></label>
+                  <input type="email" name="email" placeholder="john@email.com" required/>
+                </div>
+
+                <div class="form-group form-full">
+                  <label>Subject <span>*</span></label>
+                  <select name="subject" required>
+                    <option value="" disabled selected>Select a topic...</option>
+                    <option>General Question</option>
+                    <option>Service Inquiry</option>
+                    <option>Quote / Estimate</option>
+                    <option>Appointment Scheduling</option>
+                    <option>Affirm Financing</option>
+                    <option>Parts &amp; Availability</option>
+                    <option>Detailing (Coming Soon)</option>
+                    <option>Partnership Inquiry</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+
+                <div class="form-group form-full">
+                  <label>Your Vehicle (optional)</label>
+                  <input type="text" name="vehicle" placeholder="2019 Ford Mustang GT, 2022 Dodge Charger Scatpack..."/>
+                </div>
+
+                <div class="form-group form-full">
+                  <label>Message <span>*</span></label>
+                  <textarea name="message" placeholder="Tell us what's on your mind..." style="min-height:160px;" required></textarea>
+                </div>
+
+                <!-- Honeypot spam protection -->
+                <input type="text" name="_gotcha" style="display:none;"/>
+
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:16px;font-size:0.95rem;margin-top:8px;">
+                Send Message →
+              </button>
+
+              <p style="text-align:center;color:var(--muted);font-size:0.8rem;margin-top:14px;">
+                We respond within 24–48 hours. For faster response, text us directly.
+              </p>
+            </form>
+          </div>
+
+          <!-- DETAILING NOTIFY -->
+          <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;margin-top:20px;display:flex;gap:16px;align-items:flex-start;">
+            <span style="font-size:1.8rem;">✨</span>
+            <div>
+              <div style="font-family:var(--font-head);font-size:1.1rem;letter-spacing:0.04em;margin-bottom:6px;">
+                Detailing Services — <span style="color:var(--red);">Coming Soon</span>
+              </div>
+              <p style="color:var(--muted);font-size:0.88rem;line-height:1.6;">
+                We're adding a full detailing menu to SNA Performance. Drop us a message above selecting "Detailing (Coming Soon)" and we'll notify you when it launches.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== INSTAGRAM LINK CARDS ===== -->
+  <section>
+    <div class="container">
+      <p class="section-label">Follow the Build</p>
+      <h2 class="section-title">Us &amp; Our <em>Partners</em></h2>
+      <p class="section-sub">See our latest work and follow our partner shops for even more builds, tuning content, and behind-the-scenes action.</p>
+
+      <div class="ig-cards-grid">
+
+        <!-- SNA Performance -->
+        <a href="https://www.instagram.com/yoursnahandle" target="_blank" rel="noopener" class="ig-card">
+          <span class="ig-card-tag">Our Page</span>
+          <div class="ig-card-header">
+            <div class="ig-avatar"><div class="ig-avatar-inner">🐎</div></div>
+            <div>
+              <div class="ig-card-name">SNA Performance</div>
+              <div class="ig-card-handle">@yoursnahandle</div>
+            </div>
+          </div>
+          <p class="ig-card-desc">Every wheel swap, suspension build, audio install, and exterior piece we touch — documented on our Instagram. Mustang specialists and multi-make performance shop.</p>
+          <span class="ig-card-badge">📸 &nbsp;Follow on Instagram</span>
+        </a>
+
+        <!-- Texas Elite Performance -->
+        <a href="https://www.instagram.com/txeliteperformance" target="_blank" rel="noopener" class="ig-card">
+          <span class="ig-card-tag">Partner</span>
+          <div class="ig-card-header">
+            <div class="ig-avatar"><div class="ig-avatar-inner">⚡</div></div>
+            <div>
+              <div class="ig-card-name">Texas Elite Performance</div>
+              <div class="ig-card-handle">@txeliteperformance</div>
+            </div>
+          </div>
+          <p class="ig-card-desc">High-performance builds and fabrication from the heart of Texas. Serious power for serious enthusiasts — follow them for build content and shop updates.</p>
+          <span class="ig-card-badge">📸 &nbsp;Follow on Instagram</span>
+        </a>
+
+        <!-- Majed Tuning -->
+        <a href="https://www.instagram.com/majed_tuning" target="_blank" rel="noopener" class="ig-card">
+          <span class="ig-card-tag">Partner</span>
+          <div class="ig-card-header">
+            <div class="ig-avatar"><div class="ig-avatar-inner">🔧</div></div>
+            <div>
+              <div class="ig-card-name">Majed Tuning</div>
+              <div class="ig-card-handle">@majed_tuning</div>
+            </div>
+          </div>
+          <p class="ig-card-desc">ECU tuning and calibration to squeeze every bit of performance out of your build. Follow for dyno pulls, tune results, and build breakdowns.</p>
+          <span class="ig-card-badge">📸 &nbsp;Follow on Instagram</span>
+        </a>
+
+        <!-- Professional Details -->
+        <a href="https://www.instagram.com/professional.details" target="_blank" rel="noopener" class="ig-card">
+          <span class="ig-card-tag">Detailing Partner</span>
+          <div class="ig-card-header">
+            <div class="ig-avatar"><div class="ig-avatar-inner">✨</div></div>
+            <div>
+              <div class="ig-card-name">Professional Details</div>
+              <div class="ig-card-handle">@professional.details</div>
+            </div>
+          </div>
+          <p class="ig-card-desc">Premium paint correction, ceramic coatings, and full detailing services — our detailing partner. Coming soon as part of the SNA Performance lineup.</p>
+          <span class="ig-card-badge">📸 &nbsp;Follow on Instagram</span>
+        </a>
+
+      </div>
+
+      <!-- Photo gallery note -->
+      <div style="margin-top:40px;background:var(--surface);border:1px dashed var(--border);border-radius:var(--radius-lg);padding:32px;text-align:center;">
+        <span style="font-size:2rem;display:block;margin-bottom:12px;">📷</span>
+        <div style="font-family:var(--font-head);font-size:1.2rem;letter-spacing:0.04em;margin-bottom:8px;">Project Gallery — Coming Soon</div>
+        <p style="color:var(--muted);font-size:0.88rem;max-width:420px;margin:0 auto 20px;">
+          We're putting together a gallery of our work. In the meantime, check out our Instagram for the latest builds and installs.
+        </p>
+        <a href="https://www.instagram.com/yoursnahandle" target="_blank" rel="noopener" class="btn btn-secondary">
+          📸 &nbsp;See Our Work on Instagram →
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">SNA <span>Performance</span></div>
+      <p class="footer-tagline">Performance automotive services for serious enthusiasts. Wheels, suspension, audio, bolt-ons, and more. Mustang specialists from foxbody to S650.</p>
+      <div class="social-links" style="margin-top:20px;">
+        <a href="https://instagram.com/yoursnahandle" target="_blank" class="social-link">📸 Instagram</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="services.html#suspension">Wheels &amp; Suspension</a></li>
+        <li><a href="services.html#boltons">Bolt-On Upgrades</a></li>
+        <li><a href="services.html#audio">Audio Installs</a></li>
+        <li><a href="services.html#exterior">Exterior &amp; Lighting</a></li>
+        <li><a href="services.html#detailing">Detailing (Coming Soon)</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="quote.html">Get a Quote</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="https://www.affirm.com" target="_blank">Financing</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2024 SNA Performance. All rights reserved.</p>
+    <p class="footer-disclaimer">
+      ⚠ No refunds on labor. SNA Performance is not responsible for damage after aftermarket parts installation. Modifying your vehicle does not improve factory reliability and may void your warranty.
+    </p>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('mobile-menu');
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+  }
+</script>
+</body>
+</html>

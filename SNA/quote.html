@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Get a Quote – SNA Performance</title>
+  <meta name="description" content="Request a free estimate from SNA Performance. Tell us about your vehicle and what you want done — we'll get back to you fast."/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav class="nav">
+  <a href="index.html" class="nav-logo">SNA <span>Performance</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="quote.html" class="active">Get a Quote</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="quote.html" class="nav-cta">Book Now</a></li>
+  </ul>
+  <div class="nav-toggle" onclick="toggleMenu(this)">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div id="mobile-menu" style="display:none;position:fixed;top:70px;left:0;right:0;background:rgba(10,10,10,0.98);z-index:999;padding:32px 24px;border-bottom:1px solid #252525;">
+  <ul style="display:flex;flex-direction:column;gap:24px;">
+    <li><a href="index.html" style="color:#9ca3af;font-size:1.1rem;font-weight:600;">Home</a></li>
+    <li><a href="services.html" style="color:#9ca3af;font-size:1.1rem;font-weight:600;">Services</a></li>
+    <li><a href="quote.html" style="color:#fff;font-size:1.1rem;font-weight:600;">Get a Quote</a></li>
+    <li><a href="contact.html" style="color:#9ca3af;font-size:1.1rem;font-weight:600;">Contact</a></li>
+    <li><a href="quote.html" class="btn btn-primary" style="justify-content:center;">Book Now</a></li>
+  </ul>
+</div>
+
+<div class="page">
+
+  <!-- ===== PAGE HERO ===== -->
+  <div class="page-hero">
+    <div class="page-hero-grid"></div>
+    <div class="container">
+      <p class="section-label">Free Estimate</p>
+      <h1>Get a <em>Quote</em></h1>
+      <p>Fill out the form below and we'll get back to you with an estimate. The more detail you give us, the better we can help you.</p>
+    </div>
+  </div>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section style="padding-bottom:0;">
+    <div class="container">
+      <div style="display:flex;gap:24px;flex-wrap:wrap;">
+        <div style="flex:1;min-width:200px;display:flex;gap:16px;align-items:flex-start;">
+          <div style="width:36px;height:36px;background:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:0.9rem;flex-shrink:0;">1</div>
+          <div>
+            <div style="font-weight:700;margin-bottom:4px;">Fill Out the Form</div>
+            <div style="color:var(--muted);font-size:0.88rem;">Tell us about your car and what you want done.</div>
+          </div>
+        </div>
+        <div style="flex:1;min-width:200px;display:flex;gap:16px;align-items:flex-start;">
+          <div style="width:36px;height:36px;background:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:0.9rem;flex-shrink:0;">2</div>
+          <div>
+            <div style="font-weight:700;margin-bottom:4px;">We Review &amp; Reach Out</div>
+            <div style="color:var(--muted);font-size:0.88rem;">We'll review your request and contact you with pricing.</div>
+          </div>
+        </div>
+        <div style="flex:1;min-width:200px;display:flex;gap:16px;align-items:flex-start;">
+          <div style="width:36px;height:36px;background:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:0.9rem;flex-shrink:0;">3</div>
+          <div>
+            <div style="font-weight:700;margin-bottom:4px;">Schedule Your Appointment</div>
+            <div style="color:var(--muted);font-size:0.88rem;">Agree on the work, set a date, and bring the car in.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FORM ===== -->
+  <section>
+    <div class="container">
+
+      <!-- DISCLAIMER SHOWN BEFORE FORM -->
+      <div class="disclaimer-box" style="margin-top:0;margin-bottom:40px;">
+        <h3>⚠ Please Read Before Submitting</h3>
+        <ul>
+          <li><strong>No refunds on labor.</strong> Once work has been performed, labor is non-refundable.</li>
+          <li><strong>Aftermarket parts risk.</strong> SNA is not responsible for damage, wear, or issues that occur after aftermarket parts installation.</li>
+          <li><strong>Reliability disclaimer.</strong> Modifying your vehicle does not improve factory reliability. Performance modifications increase mechanical complexity.</li>
+          <li><strong>Warranty.</strong> Aftermarket modifications may void portions of your manufacturer warranty. You acknowledge this risk by proceeding.</li>
+        </ul>
+      </div>
+
+      <!-- FINANCING NOTE -->
+      <div style="display:flex;align-items:center;gap:16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px 20px;margin-bottom:32px;flex-wrap:wrap;">
+        <span style="font-size:1.4rem;">💳</span>
+        <div>
+          <div style="font-weight:700;font-size:0.95rem;">Financing Available Through Affirm</div>
+          <div style="color:var(--muted);font-size:0.85rem;">Split your build into monthly payments. Ask us about Affirm financing when we contact you.</div>
+        </div>
+        <a href="https://www.affirm.com" target="_blank" rel="noopener" style="margin-left:auto;color:var(--red);font-size:0.85rem;font-weight:600;white-space:nowrap;">Learn More →</a>
+      </div>
+
+      <!-- THE FORM -->
+      <div class="form-section">
+        <h2 style="font-family:var(--font-head);font-size:1.8rem;letter-spacing:0.04em;margin-bottom:32px;">
+          Tell Us About <em style="font-style:normal;color:var(--red);">Your Build</em>
+        </h2>
+
+        <!-- NOTE: To receive form submissions by email, replace the action URL below with your Formspree endpoint.
+             Sign up free at https://formspree.io and create a form to get your endpoint.
+             Example: action="https://formspree.io/f/YOUR_CODE_HERE" -->
+        <form action="https://formspree.io/f/YOUR_CODE_HERE" method="POST" enctype="multipart/form-data" onsubmit="return validateForm(event)">
+
+          <!-- PERSONAL INFO -->
+          <div style="margin-bottom:32px;">
+            <div style="font-family:var(--font-head);font-size:1.1rem;letter-spacing:0.06em;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border);">
+              👤 Your Information
+            </div>
+            <div class="form-grid">
+              <div class="form-group">
+                <label>First Name <span>*</span></label>
+                <input type="text" name="first_name" placeholder="John" required/>
+              </div>
+              <div class="form-group">
+                <label>Last Name <span>*</span></label>
+                <input type="text" name="last_name" placeholder="Doe" required/>
+              </div>
+              <div class="form-group">
+                <label>Phone Number <span>*</span></label>
+                <input type="tel" name="phone" placeholder="(555) 555-5555" required/>
+              </div>
+              <div class="form-group">
+                <label>Email Address <span>*</span></label>
+                <input type="email" name="email" placeholder="john@email.com" required/>
+              </div>
+              <div class="form-group">
+                <label>Best Way to Reach You <span>*</span></label>
+                <select name="contact_preference" required>
+                  <option value="" disabled selected>Select preference...</option>
+                  <option value="phone">Phone Call</option>
+                  <option value="text">Text Message</option>
+                  <option value="email">Email</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>City / Area</label>
+                <input type="text" name="city" placeholder="Dallas, TX"/>
+              </div>
+            </div>
+          </div>
+
+          <!-- VEHICLE INFO -->
+          <div style="margin-bottom:32px;">
+            <div style="font-family:var(--font-head);font-size:1.1rem;letter-spacing:0.06em;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border);">
+              🚗 Vehicle Information
+            </div>
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Year <span>*</span></label>
+                <input type="number" name="vehicle_year" placeholder="2019" min="1970" max="2030" required/>
+              </div>
+              <div class="form-group">
+                <label>Make <span>*</span></label>
+                <select name="vehicle_make" required>
+                  <option value="" disabled selected>Select make...</option>
+                  <optgroup label="Ford">
+                    <option>Ford Mustang (Foxbody)</option>
+                    <option>Ford Mustang (SN95)</option>
+                    <option>Ford Mustang (New Edge)</option>
+                    <option>Ford Mustang (S197)</option>
+                    <option>Ford Mustang (S550)</option>
+                    <option>Ford Mustang (S650)</option>
+                    <option>Ford Mustang Shelby / SVT</option>
+                    <option>Ford (Other)</option>
+                  </optgroup>
+                  <optgroup label="Dodge / Mopar">
+                    <option>Dodge Charger</option>
+                    <option>Dodge Challenger</option>
+                    <option>Dodge Charger Scatpack</option>
+                    <option>Dodge Challenger Scatpack</option>
+                    <option>Dodge Charger Hellcat</option>
+                    <option>Dodge Challenger Hellcat</option>
+                    <option>Dodge (Other)</option>
+                  </optgroup>
+                  <optgroup label="Honda / Acura">
+                    <option>Honda Civic</option>
+                    <option>Acura Integra</option>
+                    <option>Honda (Other)</option>
+                  </optgroup>
+                  <optgroup label="Toyota / Subaru / Scion">
+                    <option>Scion FR-S</option>
+                    <option>Subaru BRZ</option>
+                    <option>Toyota GT86</option>
+                    <option>Toyota / Subaru (Other)</option>
+                  </optgroup>
+                  <optgroup label="Other">
+                    <option>Other Make / Model</option>
+                  </optgroup>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Model / Trim</label>
+                <input type="text" name="vehicle_model" placeholder="GT Premium, R/T, Si, etc."/>
+              </div>
+              <div class="form-group">
+                <label>Mileage (approx.)</label>
+                <input type="text" name="vehicle_mileage" placeholder="45,000"/>
+              </div>
+              <div class="form-group form-full">
+                <label>Current Modifications (if any)</label>
+                <input type="text" name="current_mods" placeholder="Lowering springs, cold air intake, axle-back exhaust..."/>
+              </div>
+            </div>
+          </div>
+
+          <!-- SERVICES WANTED -->
+          <div style="margin-bottom:32px;">
+            <div style="font-family:var(--font-head);font-size:1.1rem;letter-spacing:0.06em;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border);">
+              🔧 Services You're Interested In
+            </div>
+            <div class="form-group form-full">
+              <label>Select all that apply <span>*</span></label>
+              <div class="checkbox-group">
+                <!-- Suspension -->
+                <label class="checkbox-item"><input type="checkbox" name="services" value="stance_setup"/><span>Stance / Fitment Setup</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="services" value="coilovers"/><span>Coilover / Spring Install</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="services" value="track_setup"/><span>Street &amp; Track Setup</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="services" value="wheels_tires"/><span>Wheels &amp; Tires</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="services" value="suspension_diag"/><span>Suspension Diagnostics</span></label>
+                <!-- Bolt-ons -->
+                <label class="checkbox-item"><input type="checkbox" name="services" value="cold_air"/><span>Cold Air Intake</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="services" value="throttle_body"/><span>Throttle Body Upgrade</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="services" value="headers"/><span>Headers / Manifolds</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="services" value="catback"/><span>Cat-Back Exhaust</span></label>
+                <!-- Audio -->
+                <label class="checkbox-item"><input type="checkbox" name="services" value="head_unit"/><span>Head Unit Install</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="services" value="speakers"/><span>Speaker Upgrades</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="services" value="sub_amp"/><span>Subwoofer &amp; Amp Install</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="services" value="sound_deadening"/><span>Sound Deadening</span></label>
+                <!-- Exterior -->
+                <label class="checkbox-item"><input type="checkbox" name="services" value="lighting"/><span>Lighting Upgrades</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="services" value="aero"/><span>Lips / Aero / Body Kit</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="services" value="spoiler"/><span>Spoiler / Decklid</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="services" value="grille"/><span>Grille Install</span></label>
+                <!-- Other -->
+                <label class="checkbox-item"><input type="checkbox" name="services" value="other"/><span>Other (explain below)</span></label>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT DETAILS -->
+          <div style="margin-bottom:32px;">
+            <div style="font-family:var(--font-head);font-size:1.1rem;letter-spacing:0.06em;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border);">
+              📋 Project Details
+            </div>
+            <div class="form-grid">
+              <div class="form-group form-full">
+                <label>Describe What You Want Done <span>*</span></label>
+                <textarea name="project_description" placeholder="Tell us exactly what you're looking to do. The more detail the better — parts you have in mind, issues you're experiencing, etc." required style="min-height:140px;"></textarea>
+              </div>
+              <div class="form-group form-full">
+                <label>What Is the End Goal for Your Car? <span>*</span></label>
+                <textarea name="end_goal" placeholder="Example: I want a street/track setup with a clean stance. Daily driver but want improved handling and a louder exhaust note. Or: Full stance show car, aggressive fitment, audio build..." required style="min-height:120px;"></textarea>
+              </div>
+              <div class="form-group">
+                <label>Budget Range (optional)</label>
+                <select name="budget">
+                  <option value="" disabled selected>Select range...</option>
+                  <option>Under $500</option>
+                  <option>$500 – $1,000</option>
+                  <option>$1,000 – $2,500</option>
+                  <option>$2,500 – $5,000</option>
+                  <option>$5,000+</option>
+                  <option>Flexible / Let me know what it takes</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Timeline / Urgency</label>
+                <select name="timeline">
+                  <option value="" disabled selected>Select timeline...</option>
+                  <option>ASAP</option>
+                  <option>Within 2 weeks</option>
+                  <option>Within a month</option>
+                  <option>Just planning ahead</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Interested in Affirm Financing?</label>
+                <select name="affirm_interest">
+                  <option value="" disabled selected>Select...</option>
+                  <option value="yes">Yes, tell me more</option>
+                  <option value="no">No, paying in full</option>
+                  <option value="maybe">Maybe, depends on total</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- PHOTO UPLOAD -->
+          <div style="margin-bottom:32px;">
+            <div style="font-family:var(--font-head);font-size:1.1rem;letter-spacing:0.06em;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border);">
+              📸 Upload Photos of Your Vehicle
+            </div>
+            <div class="form-group form-full">
+              <label>Vehicle Photos (optional but helpful)</label>
+              <div class="file-upload-area" id="upload-area">
+                <input type="file" name="photos" accept="image/*" multiple onchange="handleFiles(this)"/>
+                <div class="file-upload-icon">📷</div>
+                <p><strong>Click to upload</strong> or drag and drop</p>
+                <p style="margin-top:4px;font-size:0.8rem;">JPG, PNG, HEIC — multiple files accepted</p>
+              </div>
+              <div id="file-list" style="margin-top:12px;display:flex;flex-wrap:wrap;gap:8px;"></div>
+              <p style="color:var(--muted);font-size:0.8rem;margin-top:8px;">
+                📌 Photos help us give you a more accurate estimate. Include overall exterior, specific areas of interest, and current wheel/tire fitment if applicable.
+              </p>
+            </div>
+          </div>
+
+          <!-- DISCLAIMER AGREEMENT -->
+          <div style="margin-bottom:32px;">
+            <div class="form-disclaimer">
+              <strong>⚠ Service Disclaimer</strong><br/><br/>
+              By submitting this form, you acknowledge and agree that:
+              <ul style="margin-top:10px;display:flex;flex-direction:column;gap:8px;padding-left:4px;">
+                <li style="list-style:disc;margin-left:18px;color:inherit;">All labor charges are <strong>final and non-refundable</strong> once work has been performed.</li>
+                <li style="list-style:disc;margin-left:18px;color:inherit;">SNA Performance is <strong>not responsible</strong> for damage, failure, or issues arising from aftermarket parts installation.</li>
+                <li style="list-style:disc;margin-left:18px;color:inherit;">Modifying your vehicle <strong>does not improve factory reliability</strong> and may increase the likelihood of mechanical issues.</li>
+                <li style="list-style:disc;margin-left:18px;color:inherit;">Aftermarket modifications <strong>may void your manufacturer warranty</strong>. You accept this risk by proceeding.</li>
+                <li style="list-style:disc;margin-left:18px;color:inherit;">You are responsible for compliance with all local laws regarding modified vehicles.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="form-group form-full" style="margin-bottom:32px;">
+            <label class="agree-check" id="agree-label">
+              <input type="checkbox" id="agree-checkbox" required/>
+              <span>I have read and agree to the service disclaimer above. I understand that SNA Performance is not liable for damages after parts installation, that labor is non-refundable, and that modifying my vehicle may reduce reliability. <span style="color:var(--red);">*</span></span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:18px;font-size:1rem;">
+            ⚡ Submit Quote Request
+          </button>
+
+          <p style="text-align:center;color:var(--muted);font-size:0.82rem;margin-top:16px;">
+            We typically respond within 24–48 hours. For urgent inquiries, reach out directly via <a href="contact.html">our contact page</a>.
+          </p>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">SNA <span>Performance</span></div>
+      <p class="footer-tagline">Performance automotive services for serious enthusiasts. Wheels, suspension, audio, bolt-ons, and more.</p>
+      <div class="social-links" style="margin-top:20px;">
+        <a href="https://instagram.com/yoursnahandle" target="_blank" class="social-link">📸 Instagram</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="services.html#suspension">Wheels &amp; Suspension</a></li>
+        <li><a href="services.html#boltons">Bolt-On Upgrades</a></li>
+        <li><a href="services.html#audio">Audio Installs</a></li>
+        <li><a href="services.html#exterior">Exterior &amp; Lighting</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="quote.html">Get a Quote</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2024 SNA Performance. All rights reserved.</p>
+    <p class="footer-disclaimer">
+      ⚠ No refunds on labor. SNA Performance is not responsible for damage after aftermarket parts installation. Modifying your vehicle does not improve factory reliability and may void your warranty.
+    </p>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('mobile-menu');
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+  }
+
+  function handleFiles(input) {
+    const list = document.getElementById('file-list');
+    list.innerHTML = '';
+    Array.from(input.files).forEach(file => {
+      const chip = document.createElement('div');
+      chip.style.cssText = 'background:#181818;border:1px solid #252525;border-radius:6px;padding:6px 12px;font-size:0.8rem;color:#9ca3af;display:flex;align-items:center;gap:6px;';
+      chip.innerHTML = '📎 ' + file.name;
+      list.appendChild(chip);
+    });
+  }
+
+  function validateForm(e) {
+    const checkbox = document.getElementById('agree-checkbox');
+    if (!checkbox.checked) {
+      e.preventDefault();
+      document.getElementById('agree-label').style.outline = '2px solid #dc2626';
+      document.getElementById('agree-label').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      alert('Please read and agree to the service disclaimer before submitting.');
+      return false;
+    }
+    return true;
+  }
+</script>
+</body>
+</html>
