@@ -1,0 +1,156 @@
+===================================================
+  SNA PERFORMANCE — Site Refresh Summary
+  Date: April 17, 2026
+===================================================
+
+DESIGN DIRECTION
+---------------------------------------------------
+The site was redesigned to feel closer to Porsche and
+Apple — restrained, editorial, and premium. The old
+design was loud and somewhat generic; the new design
+leans on typography, spacing, and materials rather
+than color and emoji to do the heavy lifting.
+
+KEY DESIGN CHANGES
+---------------------------------------------------
+
+1. TYPOGRAPHY
+   • Dropped Bebas Neue (too rugged for a premium feel).
+   • Primary typeface: Inter (weights 200–800) — clean,
+     modern, and used at large sizes with tight negative
+     letter-spacing for display headlines.
+   • Accent typeface: Instrument Serif (italic only) —
+     used for select words inside headlines (e.g.
+     "Precision.", "your vision") for an editorial
+     feel, similar to how Porsche and Apple blend
+     sans + serif flourishes.
+   • Body text is lighter (weight 300), more generous
+     line-height, and has subtle negative tracking.
+
+2. COLOR PALETTE
+   • Base: true black (#000) with dark surface tiers
+     (#0a0a0a, #111, #171717).
+   • Text: a warm off-white (#f5f5f7) — Apple's text
+     tone, easier on the eyes than pure white.
+   • Borders: barely-visible rgba whites (8%, 14%)
+     instead of hard grey lines.
+   • Accent red changed from #dc2626 (hot red) to
+     #e10600 (Porsche-inspired red) and is now used
+     sparingly — for small accents, not as the primary
+     visual weight.
+
+3. LAYOUT & SPACING
+   • Max width increased to 1320px for cinematic feel.
+   • Section padding is now fluid (80–140px vertical).
+   • Generous whitespace between headings, sub-copy,
+     and grids.
+   • Cards are unified into a single bordered grid
+     (tiled 1-pixel seams) rather than floating cards
+     with shadows — a more architectural feel.
+
+4. HERO
+   • Full-viewport hero with massive display type
+     (up to ~150px on desktop).
+   • Radial gradients replace the bright red glow,
+     giving a moody, premium atmosphere.
+   • Stat row now sits below a hairline rule,
+     minimalist instead of boxed badges.
+
+5. NAVIGATION
+   • Glass / blur effect with subtle border.
+   • CTA is now a pill-shaped white button (Apple-style)
+     instead of a loud red rectangle.
+   • Active nav link is indicated with a hairline
+     underline.
+
+6. ICONS
+   • Replaced dozens of emoji icons (🏎️🔧🔊💡 etc.)
+     with clean, minimal stroke-based SVG icons
+     across index.html and services.html cards.
+   • Contact page icons (📍📞✉️🕐) also converted
+     to SVGs.
+   • Instagram icon in footer is now an SVG.
+   • Kept a handful of emojis where they clearly read
+     as playful (IG avatar initials show as text now).
+
+7. BUTTONS
+   • Pill-shaped (999px radius) with refined spacing.
+   • Three variants: primary (white on black),
+     secondary (outlined glass), accent (red).
+
+8. CARDS
+   • Service cards redesigned — small SVG icon, refined
+     type hierarchy, hairline separator before the
+     feature list, and each list bullet uses a small
+     red tick instead of a triangle.
+
+9. FORMS
+   • Inputs have deeper black backgrounds with subtle
+     borders, thinner labels, and a gentle focus state.
+   • Checkboxes are now styled as individual pill cards.
+   • File upload area uses a soft dashed border and SVG
+     camera icon.
+
+10. FOOTER
+    • Clearer two-part layout with hairline dividers.
+    • Typography is now tighter and more refined.
+    • Copyright year updated to 2026.
+
+
+FORMSPREE INTEGRATION
+---------------------------------------------------
+Your new Formspree endpoint (mqegwvjj) has been wired
+up using the Basic HTML integration — the right choice
+for this site, since it's static HTML (no bundler or
+framework). No JavaScript SDK is needed.
+
+Files updated:
+  • quote.html   → <form action="https://formspree.io/f/mqegwvjj" method="POST" ...>
+  • contact.html → <form action="https://formspree.io/f/mqegwvjj" method="POST" ...>
+
+Both forms:
+  • POST to the new endpoint
+  • Retain the _gotcha honeypot field for spam filtering
+  • Preserve existing validation (required fields,
+    agreement checkbox on quote.html)
+  • Maintain multipart/form-data on quote.html so file
+    uploads (vehicle photos) can be submitted
+
+Both forms will send to your Formspree inbox upon
+submission. You can log in at formspree.io to see
+responses. You may want to configure a redirect/
+"thank you" page inside the Formspree dashboard —
+that's the cleanest way to customize the success
+experience without adding JS.
+
+
+FILES CHANGED
+---------------------------------------------------
+  style.css     — complete rewrite (new design system)
+  index.html    — new hero, new SVG icons, refined copy
+  services.html — new SVG icons, refined copy
+  quote.html    — Formspree endpoint + design updates
+  contact.html  — Formspree endpoint + design updates
+
+FILES UNCHANGED
+---------------------------------------------------
+  SNA_website.html — legacy file, not linked from nav.
+    Consider removing if no longer needed.
+  images/      — folder structure preserved.
+
+
+NEXT STEPS / RECOMMENDATIONS
+---------------------------------------------------
+1. Drop real hero imagery into images/gallery/ — once
+   available, we can replace gradients with full-bleed
+   photography of cars (huge premium upgrade).
+2. Replace "Your City, TX" and "(000) 000-0000" on
+   contact.html with real shop info.
+3. Update the Instagram handle @yoursnahandle across
+   all four HTML files once the real handle is set.
+4. In Formspree, set a custom redirect URL for the
+   success page so users see a branded confirmation
+   instead of the default Formspree thank-you screen.
+5. Consider deleting the old SNA_website.html file.
+
+===================================================
