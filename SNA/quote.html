@@ -108,7 +108,7 @@
           Tell us about <em>your build</em>.
         </h2>
 
-        <form action="https://formspree.io/f/mqegwvjj" method="POST" enctype="multipart/form-data" onsubmit="return validateForm(event)">
+        <form action="https://formspree.io/f/mqegwvjj" method="POST" onsubmit="return validateForm(event)">
 
           <!-- PERSONAL INFO -->
           <div style="margin-bottom:40px;">
@@ -290,25 +290,21 @@
             </div>
           </div>
 
-          <!-- PHOTO UPLOAD -->
+          <!-- PHOTOS NOTE (upload coming soon — text us photos for now) -->
           <div style="margin-bottom:40px;">
             <div style="font-family:var(--font-sans);font-size:0.72rem;letter-spacing:0.22em;font-weight:500;text-transform:uppercase;color:#86868b;margin-bottom:22px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.08);">
-              Upload Photos of Your Vehicle
+              Vehicle Photos
             </div>
-            <div class="form-group form-full">
-              <label>Vehicle Photos (optional but helpful)</label>
-              <div class="file-upload-area" id="upload-area">
-                <input type="file" name="photos" accept="image/*" multiple onchange="handleFiles(this)"/>
-                <div class="file-upload-icon">
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3.5"/><path d="M8 5l1.5-2h5L16 5"/></svg>
-                </div>
-                <p><strong>Click to upload</strong> or drag and drop</p>
-                <p style="margin-top:6px;font-size:0.8rem;color:#86868b;">JPG, PNG, HEIC — multiple files accepted</p>
+            <div style="display:flex;gap:16px;align-items:flex-start;background:#0a0a0a;border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:20px 24px;">
+              <div style="width:36px;height:36px;border-radius:50%;background:rgba(225,6,0,0.14);display:flex;align-items:center;justify-content:center;color:#e10600;flex-shrink:0;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3.5"/><path d="M8 5l1.5-2h5L16 5"/></svg>
               </div>
-              <div id="file-list" style="margin-top:14px;display:flex;flex-wrap:wrap;gap:8px;"></div>
-              <p style="color:#86868b;font-size:0.82rem;font-weight:300;margin-top:10px;line-height:1.6;">
-                Photos help us give you a more accurate estimate. Include overall exterior, specific areas of interest, and current wheel/tire fitment if applicable.
-              </p>
+              <div>
+                <div style="font-weight:500;font-size:0.95rem;letter-spacing:-0.01em;">Photos help us quote more accurately</div>
+                <div style="color:#c7c7cc;font-size:0.88rem;font-weight:300;margin-top:4px;line-height:1.6;">
+                  After you submit this form, please text us photos of your vehicle — overall exterior, specific areas of interest, and current wheel/tire fitment if applicable. Direct upload coming soon.
+                </div>
+              </div>
             </div>
           </div>
 
@@ -396,17 +392,6 @@
   function toggleMenu() {
     const menu = document.getElementById('mobile-menu');
     menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-  }
-
-  function handleFiles(input) {
-    const list = document.getElementById('file-list');
-    list.innerHTML = '';
-    Array.from(input.files).forEach(file => {
-      const chip = document.createElement('div');
-      chip.style.cssText = 'background:#0a0a0a;border:1px solid rgba(255,255,255,0.08);border-radius:999px;padding:7px 14px;font-size:0.8rem;color:#c7c7cc;display:flex;align-items:center;gap:8px;';
-      chip.innerHTML = '<span style="width:6px;height:6px;border-radius:50%;background:#e10600;display:inline-block;"></span>' + file.name;
-      list.appendChild(chip);
-    });
   }
 
   function validateForm(e) {
