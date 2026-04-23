@@ -97,31 +97,62 @@ KEY DESIGN CHANGES
     • Copyright year updated to 2026.
 
 
-FORMSPREE INTEGRATION
+FORM BACKEND: WEB3FORMS
 ---------------------------------------------------
-Your new Formspree endpoint (mqegwvjj) has been wired
-up using the Basic HTML integration — the right choice
-for this site, since it's static HTML (no bundler or
-framework). No JavaScript SDK is needed.
+Switched off Formspree and onto Web3Forms — free,
+unlimited submissions, no plan required. This pairs
+cleanly with GitHub Pages hosting and lets Zapier's
+free Email Parser trigger handle downstream routing
+(SMS, Google Sheets, etc.) without needing the paid
+$19.99/mo Zapier Starter plan.
+
+Access key (public — lives in the HTML):
+  1611744d-cf18-481e-b6b1-dab8cffd9672
 
 Files updated:
-  • quote.html   → <form action="https://formspree.io/f/mqegwvjj" method="POST" ...>
-  • contact.html → <form action="https://formspree.io/f/mqegwvjj" method="POST" ...>
+  • quote.html   → action="https://api.web3forms.com/submit"
+  • contact.html → action="https://api.web3forms.com/submit"
 
 Both forms:
-  • POST to the new endpoint
-  • Retain the _gotcha honeypot field for spam filtering
+  • POST to Web3Forms with a hidden access_key field
+  • Use a `botcheck` checkbox honeypot (Web3Forms'
+    spam field, replacing Formspree's `_gotcha`)
+  • Use a fetch-based submit handler so users see an
+    in-page "Thanks" message instead of being redirected
+    to Web3Forms' raw JSON response
+  • Display a styled error block if submission fails
   • Preserve existing validation (required fields,
     agreement checkbox on quote.html)
-  • Maintain multipart/form-data on quote.html so file
-    uploads (vehicle photos) can be submitted
 
-Both forms will send to your Formspree inbox upon
-submission. You can log in at formspree.io to see
-responses. You may want to configure a redirect/
-"thank you" page inside the Formspree dashboard —
-that's the cleanest way to customize the success
-experience without adding JS.
+Email subject lines:
+  • quote.html   → "New Quote Request — SNA Performance"
+                   (set via hidden subject field)
+  • contact.html → whatever the user picks in the
+                   "Subject" dropdown (Web3Forms auto-
+                   uses the `subject` field as subject)
+
+Submissions go to shawn.infosec@gmail.com.
+
+ZAPIER EMAIL PARSER — NEXT STEP (FREE PATH)
+---------------------------------------------------
+To route submissions into SMS, Google Sheets, etc.
+without Zapier's paid webhook trigger:
+  1. In Zapier, create a new Zap.
+  2. Trigger: "Email Parser by Zapier → New Email".
+     Zapier provides a parser inbox address
+     (e.g. abc123@robot.zapier.com).
+  3. In Gmail, add a filter that forwards every
+     email from Web3Forms to that parser address.
+  4. Submit a test through the site, open the email
+     in the parser, and highlight each field (name,
+     email, phone, message) so Zapier learns the
+     template.
+  5. Action steps: "Google Sheets → Create Row",
+     or "Email → Send via Gmail" to your phone's
+     email-to-SMS gateway (e.g. 5555551234@vtext.com
+     for Verizon), or anything else.
+
+This path works on Zapier's FREE plan.
 
 
 FILES CHANGED
@@ -129,8 +160,8 @@ FILES CHANGED
   style.css     — complete rewrite (new design system)
   index.html    — new hero, new SVG icons, refined copy
   services.html — new SVG icons, refined copy
-  quote.html    — Formspree endpoint + design updates
-  contact.html  — Formspree endpoint + design updates
+  quote.html    — Web3Forms endpoint + fetch handler
+  contact.html  — Web3Forms endpoint + fetch handler
 
 FILES UNCHANGED
 ---------------------------------------------------
@@ -148,9 +179,9 @@ NEXT STEPS / RECOMMENDATIONS
    contact.html with real shop info.
 3. Update the Instagram handle @yoursnahandle across
    all four HTML files once the real handle is set.
-4. In Formspree, set a custom redirect URL for the
-   success page so users see a branded confirmation
-   instead of the default Formspree thank-you screen.
+4. Set up the Zapier Email Parser as described above
+   to start routing submissions to SMS, Google Sheets,
+   or anywhere else.
 5. Consider deleting the old SNA_website.html file.
 
 ===================================================
